@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -61,6 +61,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .version {
+                font-size: 0.4em;
+                position: absolute;
+            }
         </style>
     </head>
     <body>
@@ -81,17 +86,32 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ config('app.name') }}
+                    {{-- This is not nice --}}
+                    {{-- However probably the first you'll do after install, --}}
+                    {{-- is to delete this file, so who cares? --}}
+                    <?php
+                        $packages = collect(json_decode(file_get_contents(base_path('composer.lock')))->packages);
+                    ?>
+                    <span class="version">
+                        {{
+                            substr($packages->where('name', 'kordy/ticketit')->first()->version, 1)
+                        }}
+                    </span>
+                </div>
+                <div class="subtitle m-b-md">
+                    Powered by Laravel
+                    {{
+                        substr($packages->where('name', 'laravel/framework')->first()->version, 1)
+                    }}
                 </div>
 
+
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/thekordy/ticketit/wiki">Documentation</a>
+                    <a href="https://github.com/thekordy/ticketit/issues">Bug reports</a>
+                    <a href="https://github.com/thekordy/ticketit/">GitHub</a>
+                    <a href="https://laravel.com/">Laravel</a>
                 </div>
             </div>
         </div>

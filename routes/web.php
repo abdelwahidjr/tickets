@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	if(Auth::guest()){
+    	return view('welcome');
+	}else{
+		return redirect('/home');
+	}
+});
+
+
+
+
+Auth::routes();
+
+Route::get('/home', function(){
+	return redirect(action('\Kordy\Ticketit\Controllers\TicketsController@index'));
 });

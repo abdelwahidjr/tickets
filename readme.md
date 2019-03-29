@@ -1,71 +1,43 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Ticketit app
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is a Laravel 5.7 application with [Ticketit](https://github.com/thekordy/ticketit) pre-installed in it. This is meant to make installation of Ticketit as quick as possible and easier for those who are not familiar with Laravel.
 
-## About Laravel
+Install this only if you'd like to install Ticketit as a standalone app. If you'd like to integrate Ticketit to your existing Laravel project, follow the manual [installation guide](https://github.com/thekordy/ticketit#installation-manual) of the Ticketit repository.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Open a terminal at the desired installation destination and run:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+composer create-project --prefer-dist balping/ticketit-app ticketit
+```
 
-## Learning Laravel
+This pulls in all necessary libraries. Then cd into the installation directory and run the install script:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+cd ticketit
+php artisan ticketit:install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+This asks some questions (database parameters, admin account login details).
 
-## Laravel Sponsors
+The installation script will do pretty much everything for you to have Ticketit up and running. After installation is done, you might want to set up mail by editing the `.env` file and go through the settings in the admin panel.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Notes
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+Please send Ticketit-related bugreports to the [Ticketit repo](https://github.com/thekordy/ticketit/issues). Only installer-related problems should be reported here.
 
-## Contributing
+If you move your installation folder to another path, you need to update the row with `slug='routes'` in table `ticketit_settings`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Versions
 
-## Security Vulnerabilities
+| Laravel | Ticketit app |
+|---------|--------------|
+| 5.4.\*  | 1.0.\*       |
+| 5.5.\*  | 1.1.\*       |
+| 5.6.\*  | 1.2.\*       |
+| 5.7.\*  | 1.3.\*       |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Installation in 56 seconds
 
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![screen](https://cloud.githubusercontent.com/assets/5840038/23286505/e5dc5080-fa2f-11e6-92ba-032816b64444.gif)
