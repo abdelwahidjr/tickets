@@ -12,7 +12,7 @@ use Kordy\Ticketit\Models\Category;
 use Kordy\Ticketit\Models\Status;
 use Kordy\Ticketit\Helpers\LaravelVersion;
 
-class InstallTicketit extends Command
+class ProjectInstall extends Command
 {
     /**
      * The name and signature of the console command.
